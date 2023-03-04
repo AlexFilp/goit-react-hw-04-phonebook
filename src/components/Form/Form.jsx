@@ -31,7 +31,7 @@ export class Form extends Component {
 
   render() {
     return (
-      <ContactForm onSubmit={this.handleSubmit}>
+      <ContactForm onSubmit={this.handleSubmit} autoComplete="off">
         <Label>
           <Span>Name</Span>
           <Input
