@@ -1,20 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { GlobalStyle } from './GlobalStyle';
 import { Form } from './Form/Form';
 import { Contacts } from './Contacts/Contacts';
 import { Filter } from './Filter/Filter';
-
-const useLocalStorage = (key, defaultValue) => {
-  const [state, setState] = useState(
-    () => JSON.parse(localStorage.getItem(key)) ?? defaultValue
-  );
-
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(state));
-  }, [state, key]);
-
-  return [state, setState];
-};
+import { useLocalStorage } from './Hooks/useLocalStorage';
 
 export const App = () => {
   // const [contacts, setContacts] = useState(
